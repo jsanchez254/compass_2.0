@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//import $ from "jquery";
+
 //IMPORT CSS
 import "./assets/css/sidebar.css";
 import "./assets/css/compiler.css";
