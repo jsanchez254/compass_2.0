@@ -5,7 +5,7 @@
       <div class = "column is-2">
       </div>
       <div class = "column is-10">
-        <Body/>
+        <Container/>
       </div>
     </div>
   </div>
@@ -14,11 +14,11 @@
 <script>
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
-import Body from "./components/body";
+import Container from "./components/container";
 export default {
   name: 'App',
   components:{
-    Navbar, Sidebar, Body
+    Navbar, Sidebar, Container
   }
 }
 </script>
