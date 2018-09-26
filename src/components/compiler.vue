@@ -23,18 +23,20 @@
         </div>
         <div class = "columns">
             <div class = "column is-10" id = "boxD">
-
+                {{content}}
             </div>
         </div>
     </div>
 </template>
 
 <script>
+
+//IMPORT AXIOS
+import axios from 'axios';
+
 import editor from "ace-vue2";
 import 'brace/mode/c_cpp';
 import 'brace/theme/twilight';
-
-
 
 var $ = window.jQuery = require("jquery");
     export default{
@@ -45,15 +47,16 @@ var $ = window.jQuery = require("jquery");
         data(){
             return{
                 msg: "hello there",
-                content: ""
+                content: null
             }
+        },
+        //sample using axios
+        mounted(){
+            axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => (this.content = response.data))
         },
         methods:{
             click: function(){
-                // $.get("https://compass.ucmerced.edu/pluto/date", {}, function(res){
-                //     var obj = JSON.parse(res)
-                //     this.msg = obj.date
-                // })
                 $.ajax({
                     method: "GET", 
                     data: {},
