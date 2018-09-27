@@ -3,7 +3,8 @@
         <br/>
         <div class = "columns">
             <div class = "column is-10">
-                <editor height="500px" theme = "twilight" lang = "c_cpp" fontSize = "20px"> </editor>
+                <editor v-bind:content = "content1" v-on:change = "change" 
+                v-on:paste = "paste" height="500px" theme = "twilight" lang = "c_cpp"/>
             </div>
             <div class = "column is-1">
             </div>
@@ -23,22 +24,25 @@
         </div>
         <div class = "columns">
             <div class = "column is-10" id = "boxD">
-                {{content}}
+                <span v-for="currency in contento">
+                    {{currency.description}}
+                    <br/>
+                </span>
             </div>
         </div>
     </div>
 </template>
 
-<script>
 
+<script>
 //IMPORT AXIOS
 import axios from 'axios';
 
 import editor from "ace-vue2";
 import 'brace/mode/c_cpp';
 import 'brace/theme/twilight';
+import 'brace/theme/chrome';
 
-var $ = window.jQuery = require("jquery");
     export default{
         components: {
             editor
@@ -47,25 +51,24 @@ var $ = window.jQuery = require("jquery");
         data(){
             return{
                 msg: "hello there",
-                content: null
+                contento: "",
+                content1: "int hello = 7"
             }
         },
         //sample using axios
         mounted(){
             axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => (this.content = response.data))
+            .then(response => (
+                this.contento = response.data.bpi
+                ))
         },
         methods:{
-            click: function(){
-                $.ajax({
-                    method: "GET", 
-                    data: {},
-                    url: "https://compass.ucmerced.edu/pluto/datep",
-                    success:  function(res){
-                        console.log(res);
-                    },
-                    dataType: "jsonp"
-                })
+            //cool function that will update variable everytime change happens
+            change: function(log){
+                console.log(log);
+            },
+            paste: function() {
+                console.log('paste');
             },
             display: function(){
                 //will get info from ace editor
