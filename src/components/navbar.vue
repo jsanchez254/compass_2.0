@@ -1,5 +1,5 @@
-<template lang = "html">
-    <nav class = "navbar has-shadow is-black">
+<template>
+    <nav class = "navbar has-shadow is-primary">
     <div class = "navbar-brand">
         <a class = "navbar-item">
             <img src = "../assets/img/logoc.png">
@@ -16,7 +16,7 @@
                 Compass
             </div>
         </div>
-        <div class =  "navbar-end">
+        <div v-if = "logged" class =  "navbar-end">
             <div class  ="navbar-item has-dropdown is-hoverable">
                 <div class = "navbar-link">
                     Jesus Sanchez
@@ -38,10 +38,10 @@
 <script>
     export default{
         name: "navbar",
-        data(){
+         data(){
             return{
-
+                logged:false
             }
         }
     }
-<script>
+</script>
