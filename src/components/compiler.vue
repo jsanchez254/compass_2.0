@@ -61,8 +61,7 @@ import 'brace/theme/chrome';
             .then(response => (
                 this.content = response.data
             ));
-            console.log(this.content);
-            console.log(this.content.id);
+            code = this.content.slides[0].code;
         },
         methods:{
             //UPDATE CODE VARIABLE STORING CONTENT OF EDITOR
