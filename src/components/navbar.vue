@@ -16,7 +16,7 @@
                 Compass
             </div>
         </div>
-        <div v-if = "logged" class =  "navbar-end">
+        <div class =  "navbar-end">
             <div class  ="navbar-item has-dropdown is-hoverable">
                 <div class = "navbar-link">
                     Jesus Sanchez
