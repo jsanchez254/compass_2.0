@@ -5,11 +5,11 @@
             <form class = "box">
                 <div class = "field">
                     <label class = "label">User Name </label>
-                    <input class = "input" placeholder = "Enter User Name">
+                    <input v-model = "userName" class = "input" placeholder = "Enter User Name">
                 </div>
                 <div class = "field">
                     <label class = "label">Password </label>
-                    <input class = "input" placeholder = "Enter Password">
+                    <input v-model = "passWord" class = "input" placeholder = "Enter Password">
                 </div>
                 <div class = "field">
                     <button v-on:click = "logIno()" class = "button is-success">Log In</button>
@@ -24,11 +24,13 @@
     export default{
         name: "logIn",
         props: {
-            logIno: Function
+            logIno: Function,
+            userName: "",
+            passWord: ""
         },
         data(){
             return{
-
+    
             }
         }
     }

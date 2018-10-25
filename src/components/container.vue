@@ -14,7 +14,7 @@ import LogIn from "./logIn";
         },
         data(){
             return{
-                pass: false
+                pass: true
             }
         },
         methods:{
