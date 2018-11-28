@@ -16,6 +16,8 @@ import 'bulma/css/bulma.css';
 import SuiVue from 'semantic-ui-vue';
 Vue.use(SuiVue);
 
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

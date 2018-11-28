@@ -1,8 +1,10 @@
 <template>
     <nav class = "navbar has-shadow is-primary">
     <div class = "navbar-brand">
-        <a class = "navbar-item">
-            <img src = "../assets/img/logoc.png">
+        <a class = "navbar-item"  v-on:click = "DOM">
+            <div>
+                <sui-icon size="large" name="bars"/>
+            </div>                        
         </a>
         <div class = "navbar-burger">
             <span></span>
@@ -18,7 +20,7 @@
         </div>
         <div class =  "navbar-end">
             <div class  ="navbar-item has-dropdown is-hoverable">
-                <div class = "navbar-link">
+                <div id = "colorcito" class = "navbar-link">
                     Jesus Sanchez
                 </div> 
                 <div class = "navbar-dropdown">
@@ -36,11 +38,30 @@
 </template>
 
 <script>
+    import {domo} from "../assets/js/sidenav.js";
+    import {openNav} from "../assets/js/sidenav.js";
+    import {closeNav} from "../assets/js/sidenav.js";
     export default{
         name: "navbar",
          data(){
             return{
-                logged:false
+                logged:false,
+                open: true
+            }
+        },
+        methods:{
+            DOM: function(){
+                domo();
+                if(this.open){
+                    openNav();
+                    this.open = false;
+                }
+                else{
+                    closeNav();
+                    this.open = true;
+                }
+
+                console.log("hello");
             }
         }
     }

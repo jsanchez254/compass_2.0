@@ -17,7 +17,9 @@
             </form>
         </div>
     </div>
+    
 </div>
+
 </template>
 
 <script>
@@ -26,11 +28,12 @@
         props: {
             logIno: Function,
             userName: "",
-            passWord: ""
+            passWord: "",
+        
         },
         data(){
             return{
-    
+                hello: ""
             }
         }
     }
